@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Matching Algorithm</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="csrf-token" content="<%= form_authenticity_token %>">
+  <!-- Other head elements go here -->
+</head>
+<body>
+  <!-- Your HTML content goes here -->
+
+  <!-- Include your JavaScript libraries or frameworks that use the CSRF token -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="your-other-javascript-library.js"></script>
+
+  <script>
+    // Include this script to set up CSRF token for jQuery Ajax requests
+    $(document).ajaxSend(function(e, xhr, options) {
+      var token = $('meta[name="csrf-token"]').attr('content');
+      xhr.setRequestHeader('X-CSRF-Token', token);
+    });
+  </script>
+</body>
+</html>
