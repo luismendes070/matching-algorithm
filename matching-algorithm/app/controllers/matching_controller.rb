@@ -1,9 +1,10 @@
 # app/controllers/matching_controller.rb
 class MatchingController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:match_users]
   def match_users
     # Your existing matching logic...
 
-    render json: { matching_score: matching_score: 42 }
+    render json: { matching_score: 42 }
   end
 
   def read_data
