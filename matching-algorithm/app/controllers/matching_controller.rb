@@ -3,7 +3,7 @@ class MatchingController < ApplicationController
   def match_users
     # Your existing matching logic...
 
-    render json: { matching_score: matching_score }
+    render json: { matching_score: matching_score: 42 }
   end
 
   def read_data
